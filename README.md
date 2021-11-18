@@ -1,17 +1,29 @@
 <p align="middle" >
   <img width="200px;" src="https://github.com/woowacourse/javascript-racingcar-precourse/blob/main/images/racingcar_icon.png?raw=true"/>
 </p>
-<h1 align="middle">자동차 경주 게임</h1>
+<h1 align="middle">자동차 경주 게임 by Minhyung</h1>
 
 ## 🎯 기능 요구사항
 
-- 주어진 횟수 동안 n대의 자동차는 전진 또는 멈출 수 있다.
-- 자동차에 이름을 부여할 수 있다. 전진하는 자동차를 출력할 때 자동차 이름을 같이 출력한다.
-- 자동차 이름은 쉼표(,)를 기준으로 구분하며 이름은 5자 이하만 가능하다.
-- 사용자는 시도할 횟수를 입력할 수 있어야 한다.
-- 전진하는 조건은 0에서 9사이에서 random 값을 구한 후 random 값이 4 이상일 경우 전진하고, 3 이하의 값이면 멈춘다.
-- 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한 명 이상일 수 있다.
-- 우승자가 여러명일 경우 ,를 이용하여 구분한다.
+### Step 1. 이름 입력
+
+- [ ] 자동차에 이름을 부여할 수 있다. 전진하는 자동차를 출력할 때 자동차 이름을 같이 출력한다.
+- [ ] 자동차 이름은 쉼표(,)를 기준으로 구분하며 이름은 5자 이하만 가능하다.
+  - [ ] 공백을 입력했을 경우
+  - [ ] 쉼표를 쓰지 않았을 경우
+  - [ ] 이름이 5자 이하가 아닌 경우
+  - [ ] 이름을 중복하였을 경우
+
+### Step 2. 시도할 횟수를 입력
+- [ ] 주어진 횟수 동안 n대의 자동차는 전진 또는 멈출 수 있다.
+- [ ] 사용자는 시도할 횟수를 입력할 수 있어야 한다.
+  - [ ] 공백을 입력했을 경우
+  - [ ] 숫자 외에 다른 것을 입력 했을 경우
+
+### Step 3. 실행 결과 보여주기
+- [ ] 전진하는 조건은 0에서 9사이에서 random 값을 구한 후 random 값이 4 이상일 경우 전진하고, 3 이하의 값이면 멈춘다.
+- [ ] 자동차 경주 게임을 완료한 후 누가 우승했는지를 알려준다. 우승자는 한 명 이상일 수 있다.
+- [ ] 우승자가 여러명일 경우 ,를 이용하여 구분한다.
 
 <br>
 
@@ -25,6 +37,7 @@
 ## ✅ 프로그래밍 요구사항
 
 - 다음 Car 객체를 만들고, new 를 이용해 인스턴스를 만든다.
+
 ```javascript
 function Car(name) {
   this.name = name;
@@ -46,10 +59,6 @@ class Car {
 - 최종 우승자를 출력하는 span 태그는 `racing-winners` id를 가진다.
   - 예) `<span id="racing-winners">poco,park,jun</span>` 형태로 작성해주세요.
 
-
-### 라이브러리
-- 랜덤으로 잔돈을 생성하는 기능은 WoowaUtil 라이브러리의 Random.pickNumberInList 메서드를 활용하여 구현한다. (WoowaUtil은 window객체 내에 포함되어 있음)
-
 ### 공통 요구사항
 
 - 사용자가 잘못된 입력 값을 작성한 경우 `alert`을 이용해 메시지를 보여주고, 재입력할 수 있게 한다.
@@ -70,7 +79,6 @@ class Car {
   - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/import](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/import)
 - **함수(또는 메소드)의 길이가 15라인을 넘어가지 않도록 구현한다.**
   - 함수(또는 메소드)가 한 가지 일만 잘 하도록 구현한다.
-
 
 <br>
 

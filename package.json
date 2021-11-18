@@ -1,0 +1,22 @@
+{
+  "name": "javascript-racingcar-precourse",
+  "version": "1.0.0",
+  "description": "<p align=\"middle\" >   <img width=\"200px;\" src=\"https://github.com/woowacourse/javascript-racingcar-precourse/blob/main/images/racingcar_icon.png?raw=true\"/> </p> <h1 align=\"middle\">자동차 경주 게임 by Minhyung</h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/minhyungjeong/javascript-racingcar-precourse.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/minhyungjeong/javascript-racingcar-precourse/issues"
+  },
+  "homepage": "https://github.com/minhyungjeong/javascript-racingcar-precourse#readme",
+  "devDependencies": {
+    "eslint": "^8.2.0"
+  }
+}
