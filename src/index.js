@@ -1,3 +1,5 @@
+import { isValidCarNames } from './isValidCarNames.js';
+
 export default function RacingCarGame() {
   document.querySelectorAll('form')[0].id = 'car-names-form';
   document.querySelectorAll('input')[0].id = 'car-names-input';
@@ -20,7 +22,7 @@ export default function RacingCarGame() {
 
   carNamesFrom.addEventListener('submit', (e) => {
     e.preventDefault();
-    console.log(carNamesInput.value);
+    isValidCarNames(carNamesInput.value);
   });
 }
 
