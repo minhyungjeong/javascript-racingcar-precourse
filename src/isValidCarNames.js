@@ -4,19 +4,20 @@ import Car from './Car.js';
 import util from './util.js';
 
 const isValidCarNames = (string, form) => {
-  if (!util.checkAToZAndComma(string, form)) return;
+  if (util.checkAToZAndComma(string, form)) return;
 
   const carNamesArr = string.split(CAR_NAMES_SEPERATOR);
-  if (!util.checkDuplicate(carNamesArr, form)) return;
+  if (util.checkDuplicate(carNamesArr, form)) return;
+
+  if (util.checkSpace(string, form)) return;
 
   let cars = [];
   carNamesArr.forEach((name) => {
-    if (!util.checkSpace(name, form)) return;
-    if (!util.checkUnderFiveLetter(name, form)) return;
+    if (util.checkUnderFiveLetter(name, form)) return;
     cars.push(new Car(name));
   });
 
-  return cars;
+  return cars.length > 0 ? cars : false;
 };
 
 export default isValidCarNames;

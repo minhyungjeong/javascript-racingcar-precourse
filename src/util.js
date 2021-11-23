@@ -10,9 +10,8 @@ const util = {
     if (!/^[a-z]|^[\,]/.test(string)) {
       alert(REQUIRE_ATOZ_AND_COMMA);
       form.reset();
-      return false;
+      return true;
     }
-    return true;
   },
   checkDuplicate: (array, form) => {
     const duplicateCheck = new Set(array);
@@ -20,25 +19,22 @@ const util = {
     if (array.length !== duplicateCheck.size) {
       alert(CAR_NAMES_DUPLICATED);
       form.reset();
-      return false;
+      return true;
     }
-    return true;
   },
   checkSpace: (name, form) => {
     if (/\s/g.test(name) || name === '') {
       alert(INCLUDING_SPACE);
       form.reset();
-      return false;
+      return true;
     }
-    return true;
   },
   checkUnderFiveLetter: (name, form) => {
     if (name.length > 5) {
       alert(REQUIRE_UNDER_FIVE_LETTER);
       form.reset();
-      return false;
+      return true;
     }
-    return true;
   },
 };
 

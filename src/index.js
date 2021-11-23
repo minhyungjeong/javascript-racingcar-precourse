@@ -5,8 +5,6 @@ import { CAR_NAMES_SEPERATOR } from './constants.js';
 export default function RacingCarGame() {
   elements.addElementId();
 
-  // console.log(elements.carNamesForm); //이렇게 하면 Null 뜸,,
-
   const app = document.getElementById('app');
   const carNamesForm = document.getElementById('car-names-form');
   const carNamesInput = document.getElementById('car-names-input');
@@ -25,13 +23,17 @@ export default function RacingCarGame() {
   carNamesForm.addEventListener('submit', (e) => {
     e.preventDefault();
     cars = isValidCarNames(carNamesInput.value, carNamesForm);
+    isCarsExist();
+  });
+
+  const isCarsExist = () => {
     if (cars) {
       racingCountTitle.style.display = '';
       racingCountForm.style.display = '';
       carNamesInput.disabled = true;
       carNamesSubmit.disabled = true;
     }
-  });
+  };
 
   racingCountForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -64,7 +66,6 @@ export default function RacingCarGame() {
     cars.forEach((car) => {
       maxDistance = Math.max(maxDistance, car.numberOfDrivingDistance);
     });
-
     cars = cars.filter((car) => car.numberOfDrivingDistance === maxDistance);
     const winners = cars.map((car) => car.name).join(CAR_NAMES_SEPERATOR);
     app.insertAdjacentHTML('beforeend', `<h4>최종 우승자: ${winners}</h4>`);
