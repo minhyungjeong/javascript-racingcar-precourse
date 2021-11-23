@@ -24,7 +24,6 @@ export default function RacingCarGame() {
     if (cars) {
       racingCountTitle.style.display = '';
       racingCountForm.style.display = '';
-      console.log(cars);
     }
   });
 
