@@ -1,8 +1,36 @@
-export const isValidCarNames = (string) => {
-  //a-z으로 이루어진 영어가 포함되어 있거나 ,가 포함되어있는 경우
-  if (/\s/g.test(string)) {
-    alert('공백이 포함되어 있습니다.');
-  } else if (!/^[a-z]|^[\,]/.test(string)) {
-    alert('a-z(영어 소문자)로 이루어진 이름과 콤마로 구분하여 입력해주세요!');
+import {
+  INCLUDING_SPACE,
+  REQUIRE_ATOZ_AND_COMMA,
+  CAR_NAMES_SEPERATOR,
+  REQUIRE_UNDER_FIVE_LETTER,
+  CAR_NAMES_DUPLICATED,
+} from './constants.js';
+
+const isValidCarNames = (string, form) => {
+  if (!/^[a-z]|^[\,]/.test(string)) {
+    alert(REQUIRE_ATOZ_AND_COMMA);
+    form.reset();
   }
+  const carNamesArr = string.split(CAR_NAMES_SEPERATOR);
+  const duplicateCheck = new Set(carNamesArr);
+
+  if (carNamesArr.length !== duplicateCheck.size) {
+    alert(CAR_NAMES_DUPLICATED);
+    form.reset();
+  }
+
+  carNamesArr.forEach((str) => {
+    if (/\s/g.test(str) || str === '') {
+      alert(INCLUDING_SPACE);
+      form.reset();
+      return;
+    }
+    if (str.length > 5) {
+      alert(REQUIRE_UNDER_FIVE_LETTER);
+      form.reset();
+      return;
+    }
+  });
 };
+
+export default isValidCarNames;
