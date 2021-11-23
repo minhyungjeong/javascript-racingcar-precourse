@@ -25,6 +25,7 @@
 ## ✅ 프로그래밍 요구사항
 
 - 다음 Car 객체를 만들고, new 를 이용해 인스턴스를 만든다.
+
 ```javascript
 function Car(name) {
   this.name = name;
@@ -46,8 +47,8 @@ class Car {
 - 최종 우승자를 출력하는 span 태그는 `racing-winners` id를 가진다.
   - 예) `<span id="racing-winners">poco,park,jun</span>` 형태로 작성해주세요.
 
-
 ### 라이브러리
+
 - 랜덤으로 잔돈을 생성하는 기능은 WoowaUtil 라이브러리의 Random.pickNumberInList 메서드를 활용하여 구현한다. (WoowaUtil은 window객체 내에 포함되어 있음)
 
 ### 공통 요구사항
@@ -70,7 +71,6 @@ class Car {
   - [https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/import](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Statements/import)
 - **함수(또는 메소드)의 길이가 15라인을 넘어가지 않도록 구현한다.**
   - 함수(또는 메소드)가 한 가지 일만 잘 하도록 구현한다.
-
 
 <br>
 
