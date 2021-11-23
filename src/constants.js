@@ -9,3 +9,7 @@ export const REQUIRE_UNDER_FIVE_LETTER =
 export const CAR_NAMES_DUPLICATED = '자동차 이름을 중복되지 않게 입력해주세요.';
 
 export const CAR_NAMES_SEPERATOR = ',';
+
+export const MIN_NUMBER = 0;
+
+export const MAX_NUMBER = 10;
