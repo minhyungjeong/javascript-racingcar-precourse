@@ -11,6 +11,7 @@ export default function RacingCarGame() {
   const carNamesSubmit = document.getElementById('car-names-submit');
   const racingCountTitle = document.getElementById('racing-count-title');
   const racingCountForm = document.getElementById('racing-count-form');
+  const racingCountSubmit = document.getElementById('racing-count-submit');
   const racingCountInput = document.getElementById('racing-count-input');
   const racingResult = document.getElementById('racing-result');
 
@@ -30,16 +31,26 @@ export default function RacingCarGame() {
     }
   });
 
-  let numberOfPlay = 0;
   racingCountForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    numberOfPlay = racingCountInput.value;
+    playGame(racingCountInput.value);
+    racingResult.style.display = '';
+    racingCountInput.disabled = true;
+    racingCountSubmit.disabled = true;
   });
 
-  for (let i = 0; i < numberOfPlay; i++) {
-    cars.forEach((car) => car.tryGoForward());
-    console.log(cars.drivingDistance);
-  }
+  const playGame = (numberOfPlay) => {
+    for (let i = 0; i < numberOfPlay; i++) {
+      cars.forEach((car) => {
+        car.tryGoForward();
+        racingResult.insertAdjacentHTML(
+          'afterend',
+          `<div>${car.name}: ${car.hypenOfdrivingDistance}<div>`
+        );
+      });
+      racingResult.insertAdjacentHTML('afterend', `<br>`);
+    }
+  };
 }
 
 new RacingCarGame();
